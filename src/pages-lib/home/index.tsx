@@ -35,12 +35,7 @@ const Home: NextPage<
   return (
     <S.Container>
       <S.LeftSide>
-        <S.ProfileImg
-          src={Picture}
-          alt="Profile Picture"
-          width={200}
-          height={200}
-        />
+        <S.ProfileImg src={Picture} alt="Profile Picture" />
       </S.LeftSide>
       <S.RightSide>
         <S.ContentWrapper>
@@ -62,7 +57,7 @@ const Home: NextPage<
                   href={item.url}
                 >
                   <S.Circle>
-                    <S.Svg iconName={item.name as any} width={30} height={30} />
+                    <S.Svg iconName={item.name as any} />
                   </S.Circle>
                 </a>
               );
