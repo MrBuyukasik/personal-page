@@ -5,9 +5,7 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    unoptimized: true,
-  },
+  images: {},
   assetPrefix: isProd ? "https://canbuyukasik.com" : undefined,
   compiler: {
     styledComponents: true,

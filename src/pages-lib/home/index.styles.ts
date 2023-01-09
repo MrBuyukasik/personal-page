@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Palette } from "../../../styles/theme/types";
 import Typography from "../../components/Typography";
-import Image from "next/image";
+import img from "next/image";
 import SvgIcon from "../../components/ui-elements/SvgIcon";
 import { mediaQuery } from "../../../styles/utils/media";
 interface ContainerProps {
@@ -100,16 +100,16 @@ export const SubText = styled(Typography)`
   font-size: 20px;
   font-weight: 500;
   color: #343a40;
-
   ${mediaQuery.lessThan("desktop")`
           font-size:20px;
+  `}
 
-     
+  ${mediaQuery.lessThan("smallest")`
+          font-size:13px !important;
   `}
 
   ${mediaQuery.lessThan("tablet")`
           font-size: 15px;
-
   `}
 `;
 
@@ -188,7 +188,7 @@ export const SocialMediaIcons = styled.div`
   `}
 `;
 
-export const ProfileImg = styled(Image)`
+export const ProfileImg = styled(img)`
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(30%);
   border-radius: 100px;

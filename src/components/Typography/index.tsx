@@ -25,7 +25,7 @@ const Typography = ({
 }: TypographyProps) => {
   return (
     <S.Typography
-      className={twMerge(titilliumWeb.className, className)}
+      className={twMerge(className)}
       inline={inline}
       align={align}
       size={size}
