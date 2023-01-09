@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? "http://canbuyukasik.com" : undefined,
+  assetPrefix: isProd ? "https://canbuyukasik.com" : undefined,
   compiler: {
     styledComponents: true,
   },
