@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {},
+  assetPrefix: isProd ? "/personal-page/" : "",
   compiler: {
     styledComponents: true,
   },
