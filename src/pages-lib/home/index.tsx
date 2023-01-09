@@ -45,7 +45,9 @@ const Home: NextPage<
           </S.NameWrapper>
           <S.SubTextWrapper>
             <S.SubText>SOFTWARE ENGINEER · BUSINESS INQUIRIES:</S.SubText>
-            <S.MailText>HASANCANBUYUKASIK@GMAIL.COM</S.MailText>
+            <S.MailTo href="mailto:hasancanbuyukasik@gmail.com">
+              <S.MailText>HASANCANBUYUKASIK@GMAIL.COM</S.MailText>
+            </S.MailTo>
           </S.SubTextWrapper>
           <S.SocialMediaIcons>
             {socialMediaIcons.map((item, index) => {

@@ -215,3 +215,7 @@ export const Svg = styled(SvgIcon)`
          height: 20px;
   `}
 `;
+
+export const MailTo = styled.a`
+  text-decoration: none;
+`;
