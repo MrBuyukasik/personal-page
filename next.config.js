@@ -3,8 +3,10 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   swcMinify: true,
-  images: {},
-  assetPrefix: isProd ? "/personal-page/" : "",
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: "/personal-page/",
   compiler: {
     styledComponents: true,
   },
