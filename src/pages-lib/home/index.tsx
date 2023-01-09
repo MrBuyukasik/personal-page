@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType, NextPage } from "next";
-import Typography from "../../components/Typography";
 
 import * as S from "./index.styles";
 import { homePageStaticProps } from "./staticProps";

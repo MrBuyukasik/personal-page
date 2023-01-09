@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Palette } from "../../../styles/theme/types";
 import Typography from "../../components/Typography";
-import img from "next/image";
+import Image from "next/image";
 import SvgIcon from "../../components/ui-elements/SvgIcon";
 import { mediaQuery } from "../../../styles/utils/media";
 interface ContainerProps {
@@ -188,7 +188,7 @@ export const SocialMediaIcons = styled.div`
   `}
 `;
 
-export const ProfileImg = styled(img)`
+export const ProfileImg = styled(Image)`
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(30%);
   border-radius: 100px;
