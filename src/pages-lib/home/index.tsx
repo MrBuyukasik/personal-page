@@ -5,10 +5,15 @@ import { homePageStaticProps } from "./staticProps";
 import Picture from "../../../public/images/profile.png";
 import SvgIcon from "../../components/ui-elements/SvgIcon";
 import { iconMap } from "../../components/ui-elements/SvgIcon/icons";
+import YouTube, { YouTubeProps } from "react-youtube";
+import { mediaQuery } from "../../../styles/utils/media";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Home: NextPage<
   InferGetStaticPropsType<typeof homePageStaticProps>
 > = () => {
+  const { isMobileScreen, isSmallScreen, isSmallestScreen } = useWindowSize();
+
   const socialMediaIcons = [
     {
       name: "YoutubeIcon",
@@ -31,6 +36,45 @@ const Home: NextPage<
       url: "https://www.instagram.com/h.can.buyukasik",
     },
   ];
+
+  const handleHeight = () => {
+    if (isSmallScreen) {
+      return "300";
+    }
+    if (isMobileScreen) {
+      return "400";
+    }
+
+    if (isSmallestScreen) {
+      return "300";
+    }
+
+    return "390";
+  };
+
+  const handleWidth = () => {
+    if (isSmallScreen) {
+      return "500";
+    }
+    if (isMobileScreen) {
+      return "300";
+    }
+
+    if (isSmallestScreen) {
+      return "300";
+    }
+
+    return "640";
+  };
+
+  const opts = {
+    height: handleHeight(),
+    width: handleWidth(),
+  };
+
+  const _onReady = (event: any) => {
+    event.target.pauseVideo();
+  };
   return (
     <S.Container>
       <S.LeftSide>
@@ -64,6 +108,9 @@ const Home: NextPage<
               );
             })}
           </S.SocialMediaIcons>
+          <S.VideoContainer>
+            <YouTube videoId="vTKBpUGIpcE" opts={opts} onReady={_onReady} />
+          </S.VideoContainer>
         </S.ContentWrapper>
       </S.RightSide>
     </S.Container>
