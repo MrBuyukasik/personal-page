@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { FontSize, FontWeight } from "../../../styles/theme/font";
 import * as S from "./index.styles";
-import { titilliumWeb } from "./titillium-font";
 
 export interface TypographyProps extends ComponentPropsWithoutRef<"p"> {
   size?: FontSize;
