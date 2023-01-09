@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
@@ -6,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: "/personal-page/",
+  assetPrefix: isProd ? "http://canbuyukasik.com" : undefined,
   compiler: {
     styledComponents: true,
   },
