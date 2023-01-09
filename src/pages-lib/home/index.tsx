@@ -3,16 +3,12 @@ import { InferGetStaticPropsType, NextPage } from "next";
 import * as S from "./index.styles";
 import { homePageStaticProps } from "./staticProps";
 import Picture from "../../../public/images/profile.png";
-import SvgIcon from "../../components/ui-elements/SvgIcon";
-import { iconMap } from "../../components/ui-elements/SvgIcon/icons";
-import YouTube, { YouTubeProps } from "react-youtube";
-import { mediaQuery } from "../../../styles/utils/media";
 import useWindowSize from "../../hooks/useWindowSize";
 
 const Home: NextPage<
   InferGetStaticPropsType<typeof homePageStaticProps>
 > = () => {
-  const { isMobileScreen, isSmallScreen, isSmallestScreen } = useWindowSize();
+  const { isSmallScreen, isMobileScreen } = useWindowSize();
 
   const socialMediaIcons = [
     {
@@ -37,44 +33,29 @@ const Home: NextPage<
     },
   ];
 
-  const handleHeight = () => {
-    if (isSmallScreen) {
-      return "300";
-    }
-    if (isMobileScreen) {
-      return "400";
-    }
-
-    if (isSmallestScreen) {
-      return "300";
-    }
-
-    return "390";
-  };
-
   const handleWidth = () => {
-    if (isSmallScreen) {
-      return "500";
-    }
     if (isMobileScreen) {
-      return "300";
+      return "350";
     }
 
-    if (isSmallestScreen) {
-      return "300";
+    if (isSmallScreen) {
+      return "600";
     }
 
     return "640";
   };
 
-  const opts = {
-    height: handleHeight(),
-    width: handleWidth(),
+  const handleHeight = () => {
+    if (isMobileScreen) {
+      return "300";
+    }
+
+    if (isSmallScreen) {
+      return "390";
+    }
+    return "390";
   };
 
-  const _onReady = (event: any) => {
-    event.target.pauseVideo();
-  };
   return (
     <S.Container>
       <S.LeftSide>
@@ -109,7 +90,13 @@ const Home: NextPage<
             })}
           </S.SocialMediaIcons>
           <S.VideoContainer>
-            <YouTube videoId="vTKBpUGIpcE" opts={opts} onReady={_onReady} />
+            <iframe
+              width={handleWidth()}
+              height={handleHeight()}
+              src="https://www.youtube.com/embed/vTKBpUGIpcE"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            />
           </S.VideoContainer>
         </S.ContentWrapper>
       </S.RightSide>

@@ -222,13 +222,10 @@ export const MailTo = styled.a`
 
 export const VideoContainer = styled.div`
   margin-top: 60px;
-  border-radius: 10px;
   justify-content: center;
   ${mediaQuery.lessThan("desktop")`
          justify-content:center;
          align-self: center;
-
-        
   `};
   ${mediaQuery.lessThan("tablet")`
          justify-content:center;
