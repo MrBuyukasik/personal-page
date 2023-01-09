@@ -35,7 +35,7 @@ const Home: NextPage<
   return (
     <S.Container>
       <S.LeftSide>
-        <S.ProfileImg src={Picture} alt="Profile Picture" />
+        <S.ProfileImg priority src={Picture} alt="Profile Picture" />
       </S.LeftSide>
       <S.RightSide>
         <S.ContentWrapper>
